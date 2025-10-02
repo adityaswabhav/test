@@ -33,7 +33,7 @@ public class AccountController {
 
     private final AccountService accountService;
 
-    @PostMapping("/createaccount")
+    @PostMapping("/create")
     public ResponseEntity<AccountDto> createAccount(@RequestBody AccountDto dto,
                                                     @AuthenticationPrincipal UserDetails userDetails) {
         AccountDto createdAccount = accountService.createAccountForLoggedInUser(dto, userDetails.getUsername());
